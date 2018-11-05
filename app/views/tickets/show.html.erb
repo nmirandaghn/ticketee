@@ -3,9 +3,8 @@
   <%= simple_format(@ticket.description) %>
 </div>
 
-<%# title(@project.name, "Projects") %>
+<%= link_to "Edit Ticket", edit_project_ticket_path(@project) %>
 
-<%#= link_to "Edit Ticket", edit_project_ticket_path(@project) %>
 <%#= link_to "Delete Ticket", 
   project_ticket_path(@ticket), 
   method: :delete, 
