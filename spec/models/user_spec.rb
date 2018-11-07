@@ -4,12 +4,12 @@ RSpec.describe User, type: :model do
   describe "passwords" do    
     it "needs a password and confirmation to save" do
       u = User.new(name: "steve")
-      u.save      
+      u.save
       expect(u).to_not be_valid 
 
       u.password = "password"
       u.password_confirmation = ""
-      u.save      
+      u.save
       expect(u).to_not be_valid 
 
       u.password_confirmation = "password"
