@@ -21,7 +21,6 @@ feature "Editing Projects" do
    click_button 'Update Project'
 
    expect(page).to have_content("Project has not been updated.")
-#   expect(page).to have_content("Name can't be blank")
   end
 
 end
