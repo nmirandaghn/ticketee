@@ -17,7 +17,7 @@ feature 'Profile page' do
     click_link 'Edit Profile'
 
     fill_in "Name", with: "Other name"
-    click_link 'Update Profile'
+    click_button 'Update Profile'
 
     expect(page).to have_content("Profile has been updated.")
   end

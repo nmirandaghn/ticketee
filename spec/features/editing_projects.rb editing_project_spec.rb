@@ -18,7 +18,7 @@ feature "Editing Projects" do
 
   scenario "can not update a project without a name" do
     fill_in "Name", with: ""
-   click_button 'Update Project'
+    click_button 'Update Project'
 
    expect(page).to have_content("Project has not been updated.")
   end
