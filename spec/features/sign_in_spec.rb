@@ -13,6 +13,6 @@ feature "Signing in" do
 
     click_button 'Sign in'
 
-    expect(page).to have_content("Signed in succesfully")
+    expect(page).to have_content("Signed in succesfully.")
   end
 end
