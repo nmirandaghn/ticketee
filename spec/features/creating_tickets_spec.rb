@@ -8,7 +8,7 @@ feature "Creating tickets" do
     visit "/"
     click_link project.name
     click_link "New Ticket"
-    message = "You need to sign in or sign up before continuing"
+    message = "You need to sign in or sign up before continuing."
     expect(page).to have_content(message)
 
     fill_in "Name", with: user.name
@@ -26,7 +26,7 @@ feature "Creating tickets" do
 
     expect(page).to have_content("Ticket has been created.")
     within "#ticket #author" do
-      expect(page).to have_content("Created by sample@example.com")
+      expect(page).to have_content("Created by user@example.org")
     end
   end
 

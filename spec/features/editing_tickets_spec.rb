@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 feature "Editing tickets" do
+  let!(:user) { FactoryGirl.create(:user, password: "password") }
   let!(:project) { FactoryGirl.create(:project) }
-  let!(:ticket) { FactoryGirl.create(:ticket, project_id: project.id) }
+  let!(:ticket) { FactoryGirl.create(:ticket, project_id: project.id, user: user) }
 
   before do
+    sign_in_as!(user)
+
     visit '/'
     click_link project.name
     click_link ticket.title
