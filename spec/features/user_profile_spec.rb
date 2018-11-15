@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Profile page' do
   scenario 'Viewing' do
-    user = FactoryGirl.create(:user, password: 'password')
+    user = FactoryGirl.create(:user)
 
     visit user_path(user)
 
@@ -11,7 +11,7 @@ feature 'Profile page' do
   end
 
   scenario "Editing" do
-    user = FactoryGirl.create(:user, password: 'password')
+    user = FactoryGirl.create(:user)
 
     visit user_path(user)
     click_link 'Edit Profile'

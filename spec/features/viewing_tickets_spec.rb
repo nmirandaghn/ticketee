@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "Viewing tickets" do
   before do
-    user = FactoryGirl.create(:user, password: "password")
+    user = FactoryGirl.create(:user)
 
     textmate_2 = FactoryGirl.create(:project, name: "TextMate 2")
 

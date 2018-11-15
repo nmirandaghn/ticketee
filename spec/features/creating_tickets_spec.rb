@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Creating tickets" do
   before do
     project = FactoryGirl.create(:project, name: "Internet Explorer")
-    user = FactoryGirl.create(:user, password: "password")
+    user = FactoryGirl.create(:user)
 
     visit "/"
     click_link project.name

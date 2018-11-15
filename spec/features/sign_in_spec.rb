@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "Signing in" do
   scenario "Sign in" do
-    user = FactoryGirl.create(:user, password: 'password')
+    user = FactoryGirl.create(:user)
 
     visit '/'
 
