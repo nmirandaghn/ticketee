@@ -3,10 +3,13 @@
   <li><%= link_to "Sign in",  signin_path %></li>
 </nav>
 
-<%= link_to "New Project", new_project_path %>
+<% if admin? %>
+  <%= link_to "New Project", new_project_path %>
+<% end %>
+
 <ul>
   <% @projects.each do |project| %>
-    <li><%= link_to project.name, project %></li>
+      <li><%= link_to project.name, project %></li>
   <% end %>
 </ul>
 
