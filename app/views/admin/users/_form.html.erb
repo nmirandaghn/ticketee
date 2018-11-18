@@ -15,7 +15,11 @@
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.password_field :password%>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.check_box :admin %>
+    <%= f.label :admin, "Is an admin user? "%><br />
   </p>
 
   <%= f.submit %>

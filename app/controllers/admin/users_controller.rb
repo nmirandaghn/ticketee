@@ -1,4 +1,4 @@
-class Admin::UsersController < Admin::BaseController  #ApplicationController
+class Admin::UsersController < Admin::BaseController
   def index
     @users = User.order(:email)
   end
@@ -23,6 +23,6 @@ class Admin::UsersController < Admin::BaseController  #ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
   end
 end
