@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
       u.password = "password"
       u.password_confirmation = ""
       u.save
-      expect(u).to_not be_valid 
+      expect(u).to_not be_valid
 
       u.password_confirmation = "password"
       u.save
@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "hunter")
 
       expect(u).to_not be_valid
-    end  
+    end
   end
 
   describe "authentication" do
