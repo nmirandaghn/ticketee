@@ -1,17 +1,28 @@
 class Admin::UsersController < Admin::BaseController  #ApplicationController
-  before_action :authorize_admin!
-
   def index
+    @users = User.order(:email)
   end
 
-  private
-  def authorize_admin!
-    require_signin!
+  def new
+    @user = User.new
+  end
 
-    unless current_user.admin?
-      flash[:alert] = "You must be an admin to do that."
-      redirect_to root_url
+  def create
+    params = user_params.dup
+    params[:password_confirmation] = params[:password]
+    @user = User.new(params)
+
+    if @user.save
+      flash[:notice] = "User has been created."
+      redirect_to admin_users_path
+    else
+      flash[:notice] = "User has not been created."
+      render action: 'new'
     end
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 end
