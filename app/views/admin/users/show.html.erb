@@ -1,0 +1,7 @@
+<%= title(@user.name, "Profile") %>
+<span id="author"></span>
+
+<%= @user.name %>
+<%= @user.email %>
+
+<%= link_to "Edit User", edit_admin_user_path(@user) %>
