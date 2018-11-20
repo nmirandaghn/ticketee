@@ -13,20 +13,20 @@ feature "Editing users" do
     click_link "Edit User"
   end
 
-  it "Editing a user" do
-    fill_in "email", with: "new_guy@example.com"
+  scenario "Editing a user" do
+    fill_in "Email", with: "newguy@example.com"
     click_button "Update User"
 
     expect(page).to have_content("User has been updated.")
 
     within("#users") do
-      expect(page).to have_content("new_guy@example.com")
+      expect(page).to have_content("newguy@example.com")
       expect(page).to_not have_content(user.email)
     end
   end
 
   scenario "Toggling user's admin ability" do
-    check "Is an admin?"
+    check "Is an admin user?"
     click_button "Update User"
     expect(page).to have_content("User has been updated.")
     within("#users") do

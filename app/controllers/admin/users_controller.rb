@@ -34,7 +34,7 @@ class Admin::UsersController < Admin::BaseController
       flash[:notice] = "User has been updated."
       redirect_to admin_users_path
     else
-      flash[:notice] = "User has not been updated."
+      flash[:alert] = "User has not been updated."
       render 'edit'
     end
   end
