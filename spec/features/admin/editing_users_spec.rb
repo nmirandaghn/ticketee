@@ -5,11 +5,9 @@ feature "Editing users" do
   let(:user) { FactoryGirl.create(:user) }
 
   before do
+
     sign_in_as!(admin)
-    visit '/'
-    click_link "Admin"
-    click_link "Users"
-    click_link user.email
+    visit admin_user_path(user)
     click_link "Edit User"
   end
 

@@ -29,22 +29,22 @@ class Admin::UsersController < Admin::BaseController
   def edit
   end
 
-  def update
-    if @user.update(user_params)
-      flash[:notice] = "User has been updated."
-      redirect_to admin_users_path
-    else
-      flash[:alert] = "User has not been updated."
-      render 'edit'
-    end
+def update
+  if @user.update(user_params)
+    flash[:notice] = "User has been updated."
+    redirect_to admin_users_path
+  else
+    flash[:alert] = "User has not been updated."
+    render 'edit'
   end
+end
 
-  private
-  def set_user
-    @user = User.find(params[:id] )
-  end
+private
+def set_user
+  @user = User.find(params[:id] )
+end
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
-  end
+def user_params
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
+end
 end
