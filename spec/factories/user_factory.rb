@@ -3,7 +3,7 @@ FactoryGirl.define do
 
   factory :user do
     name "EvaLuator"
-    email #{ generate(:email) } 
+    email 
     password "hunter2"
 
     factory :admin_user do
