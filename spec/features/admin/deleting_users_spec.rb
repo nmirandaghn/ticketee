@@ -20,5 +20,6 @@ feature "Deleting users" do
 
     expect(page).to have_content("You can't delete yourself.")
     visit admin_user_path(admin)
+    expect(page).to have_no_content(user.email)
   end
 end
