@@ -5,6 +5,10 @@ class Project < ApplicationRecord
                                              user_id: user.id })
   end
 
+  scope :for, ->(user) do
+    user.admin? ? Project.all : Project.viewable_by(user)
+  end
+
   has_many :tickets, dependent: :delete_all
   validates :name, presence: true
 end
